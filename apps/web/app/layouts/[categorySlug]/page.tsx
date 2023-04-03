@@ -1,6 +1,8 @@
 import { use } from 'react'
 import { SkeletonCard } from 'components/SkeletonCard'
-import { type PageProps, fetchCategoryBySlug } from '@/lib/getCategories'
+import {
+  type PageProps, fetchCategoryBySlug,
+} from '@/lib/getCategories'
 
 export default function Page({ params }: PageProps) {
   const category = use(fetchCategoryBySlug(params.categorySlug))

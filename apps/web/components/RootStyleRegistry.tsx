@@ -7,14 +7,16 @@ import {
   useStyledJsxRegistry,
 } from '@/lib/styling'
 
-export default function RootStyleRegistry({
-  children,
-}: {
+export default function RootStyleRegistry({ children }: {
   children: React.ReactNode
 }) {
-  const [StyledComponentsRegistry, styledComponentsFlushEffect]
+  const [
+    StyledComponentsRegistry, styledComponentsFlushEffect,
+  ]
     = useStyledComponentsRegistry()
-  const [StyledJsxRegistry, styledJsxFlushEffect] = useStyledJsxRegistry()
+  const [
+    StyledJsxRegistry, styledJsxFlushEffect,
+  ] = useStyledJsxRegistry()
 
   useServerInsertedHTML(() => {
     return (

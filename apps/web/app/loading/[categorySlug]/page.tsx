@@ -9,7 +9,7 @@ import type {
 
 async function fetchCategory(categorySlug: string | undefined): Promise<Category | undefined> {
   // artificial delay
-  await new Promise(resolve => setTimeout(resolve, 3000))
+  await new Promise((resolve) => setTimeout(resolve, 3000))
 
   if (!categorySlug)
     return

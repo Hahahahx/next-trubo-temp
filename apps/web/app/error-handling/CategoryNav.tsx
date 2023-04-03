@@ -13,7 +13,7 @@ function CategoryNav({ categories }: { categories: Category[] }) {
         Home
       </TabNavItem>
 
-      {categories.map(item => (
+      {categories.map((item) => (
         <TabNavItem
           key={item.slug}
           href={`/error-handling/${item.slug}`}

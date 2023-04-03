@@ -16,7 +16,7 @@ function SubCategoryNav({ category }: { category: Category }) {
         All
       </TabNavItem>
 
-      {category.items.map(item => (
+      {category.items.map((item) => (
         <TabNavItem
           key={item.slug}
           href={`/route-groups/${category.slug}/${item.slug}`}

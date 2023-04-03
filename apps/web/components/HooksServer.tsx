@@ -1,5 +1,7 @@
 import React from 'react'
-import { cookies, headers, previewData } from 'next/headers'
+import {
+  cookies, headers, previewData,
+} from 'next/headers'
 
 function HooksServer() {
   return (

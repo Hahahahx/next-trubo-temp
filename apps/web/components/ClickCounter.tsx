@@ -3,7 +3,9 @@
 import React from 'react'
 
 function ClickCounter() {
-  const [count, setCount] = React.useState(0)
+  const [
+    count, setCount,
+  ] = React.useState(0)
 
   return (
     <button

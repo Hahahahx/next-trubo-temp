@@ -5,7 +5,9 @@ import { Boundary } from 'components/Boundary'
 import { useCounter } from './CounterContext'
 
 function ClickCounter() {
-  const [count, setCount] = useCounter()
+  const [
+    count, setCount,
+  ] = useCounter()
 
   return (
     <Boundary

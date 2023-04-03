@@ -5,7 +5,9 @@ import SubCategoryNav from '../SubCategoryNav'
 import { fetchCategoryBySlug } from '@/lib/getCategories'
 import type { PageProps } from '@/lib/getCategories'
 
-export default function Layout({ children, params }: PageProps) {
+export default function Layout({
+  children, params,
+}: PageProps) {
   const category = use(fetchCategoryBySlug(params.categorySlug))
   if (!category)
     return null

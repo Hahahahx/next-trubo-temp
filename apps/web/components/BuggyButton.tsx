@@ -4,7 +4,9 @@ import Button from 'components/Button'
 import React from 'react'
 
 export default function BuggyButton() {
-  const [clicked, setClicked] = React.useState(false)
+  const [
+    clicked, setClicked,
+  ] = React.useState(false)
 
   if (clicked)
     throw new Error('Oh no! Something went wrong.')

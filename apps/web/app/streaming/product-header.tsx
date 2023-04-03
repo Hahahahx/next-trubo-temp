@@ -2,7 +2,7 @@ import { use } from 'react'
 import Image from 'next/image'
 async function delay(ms: number): Promise<string> {
   const title = 'Next.js Quarter Zip'
-  await new Promise(resolve =>
+  await new Promise((resolve) =>
     setTimeout(() => {
       resolve(title)
     }, ms),

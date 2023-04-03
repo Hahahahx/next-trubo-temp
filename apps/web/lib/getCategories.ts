@@ -16,9 +16,15 @@ export function getCategories(): Category[] {
       slug: 'electronics',
       count: 11,
       items: [
-        { name: 'Phones', slug: 'phones', count: 4 },
-        { name: 'Tablets', slug: 'tablets', count: 5 },
-        { name: 'Laptops', slug: 'laptops', count: 2 },
+        {
+          name: 'Phones', slug: 'phones', count: 4,
+        },
+        {
+          name: 'Tablets', slug: 'tablets', count: 5,
+        },
+        {
+          name: 'Laptops', slug: 'laptops', count: 2,
+        },
       ],
     },
     {
@@ -26,9 +32,15 @@ export function getCategories(): Category[] {
       slug: 'clothing',
       count: 12,
       items: [
-        { name: 'Tops', slug: 'tops', count: 3 },
-        { name: 'Shorts', slug: 'shorts', count: 4 },
-        { name: 'Shoes', slug: 'shoes', count: 5 },
+        {
+          name: 'Tops', slug: 'tops', count: 3,
+        },
+        {
+          name: 'Shorts', slug: 'shorts', count: 4,
+        },
+        {
+          name: 'Shoes', slug: 'shoes', count: 5,
+        },
       ],
     },
     {
@@ -36,9 +48,15 @@ export function getCategories(): Category[] {
       slug: 'books',
       count: 10,
       items: [
-        { name: 'Fiction', slug: 'fiction', count: 5 },
-        { name: 'Biography', slug: 'biography', count: 2 },
-        { name: 'Education', slug: 'education', count: 3 },
+        {
+          name: 'Fiction', slug: 'fiction', count: 5,
+        },
+        {
+          name: 'Biography', slug: 'biography', count: 2,
+        },
+        {
+          name: 'Education', slug: 'education', count: 3,
+        },
       ],
     },
   ]
@@ -46,7 +64,7 @@ export function getCategories(): Category[] {
 
 export async function fetchCategoryBySlug(slug: string | undefined) {
   // Assuming it always return expected categories
-  return getCategories().find(category => category.slug === slug)
+  return getCategories().find((category) => category.slug === slug)
 }
 
 export async function fetchCategories(): Promise<Category[]> {
@@ -57,7 +75,7 @@ async function findSubCategory(
   category: Category | undefined,
   subCategorySlug: string | undefined,
 ) {
-  return category?.items.find(category => category.slug === subCategorySlug)
+  return category?.items.find((category) => category.slug === subCategorySlug)
 }
 
 export async function fetchSubCategory(

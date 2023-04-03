@@ -1,7 +1,9 @@
 import { Boundary } from 'components/Boundary'
 import { use } from 'react'
 import { Counter } from '../../ClickCounter'
-import { type PageProps, fetchSubCategory } from '@/lib/getCategories'
+import {
+  type PageProps, fetchSubCategory,
+} from '@/lib/getCategories'
 
 export default function Page({ params }: PageProps) {
   const category = use(

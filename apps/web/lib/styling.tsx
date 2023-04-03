@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
-import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+import {
+  StyleRegistry, createStyleRegistry,
+} from 'styled-jsx'
+import {
+  ServerStyleSheet, StyleSheetManager,
+} from 'styled-components'
 
 interface ChildProps { children: React.ReactNode }
 
@@ -23,7 +27,9 @@ export function useStyledComponentsRegistry() {
     )
   }
 
-  return [StyledComponentsRegistry, styledComponentsFlushEffect] as const
+  return [
+    StyledComponentsRegistry, styledComponentsFlushEffect,
+  ] as const
 }
 
 export function useStyledJsxRegistry() {
@@ -41,5 +47,7 @@ export function useStyledJsxRegistry() {
     )
   }
 
-  return [StyledJsxRegistry, styledJsxFlushEffect] as const
+  return [
+    StyledJsxRegistry, styledJsxFlushEffect,
+  ] as const
 }

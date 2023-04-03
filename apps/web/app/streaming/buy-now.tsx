@@ -1,7 +1,7 @@
 import { use } from 'react'
 async function delay(ms: number): Promise<string> {
   const price = '$80.00'
-  await new Promise(resolve =>
+  await new Promise((resolve) =>
     setTimeout(() => {
       resolve(price)
     }, ms),

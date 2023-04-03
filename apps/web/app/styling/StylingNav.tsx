@@ -35,7 +35,7 @@ function StylingNav() {
 
   return (
     <div className="flex items-center space-x-4">
-      {items.map(item => (
+      {items.map((item) => (
         <TabNavItem
           key={item.slug}
           href={`/styling${item.slug ? `/${item.slug}` : ''}`}

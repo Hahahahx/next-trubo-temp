@@ -9,7 +9,9 @@ interface Item {
   children?: Item[]
 }
 
-function List({ items, depth }: { items: Item[]; depth: number }) {
+function List({
+  items, depth,
+}: { items: Item[]; depth: number }) {
   return (
     <div>
       {items.map((item, i) => {
@@ -134,9 +136,7 @@ export function ComponentTree({ items }: { items: Item[] }) {
                   className={clsx(
                     'h-2 animate-[translateXReset_1s_ease-in-out_1_reverse] rounded-full bg-vercel-blue',
                   )}
-                  style={{
-                    transform: `translateX(-${100 - clientDeltaAsPercent}%)`,
-                  }}
+                  style={{ transform: `translateX(-${100 - clientDeltaAsPercent}%)` }}
                 />
               </div>
             </div>
