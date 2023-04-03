@@ -21,14 +21,12 @@
     "prepare": "husky install",
     "lint": "turbo run lint"
   },
-  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "next": "latest",
     "prettier": "latest",
     "turbo": "latest"
   },

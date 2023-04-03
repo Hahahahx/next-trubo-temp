@@ -1,15 +1,17 @@
 import Link from 'next/link'
-import Button from '../../../packages/ui/Button'
+import Button from 'ui/Button'
+import HelloWorld from './hello.mdx'
 import { demos } from '@/lib/demos'
 
 export default function Page() {
   return (
     <div className="space-y-6">
+      <HelloWorld/>
       <Button>test</Button>
       <div className="space-y-8 text-white">
         {demos
-          .filter(section =>
-            section.items.some(x => typeof x.isDisabled === 'undefined'),
+          .filter((section) =>
+            section.items.some((x) => typeof x.isDisabled === 'undefined'),
           )
           .map((section) => {
             return (
@@ -20,7 +22,7 @@ export default function Page() {
 
                 <div className="grid grid-cols-2 gap-5">
                   {section.items
-                    .filter(item => !item.isDisabled)
+                    .filter((item) => !item.isDisabled)
                     .map((item) => {
                       return (
                         <Link

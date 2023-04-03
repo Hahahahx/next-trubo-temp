@@ -4,7 +4,9 @@ module.exports = {
   extends: ['custom'],
   settings: {
     next: {
-      rootDir: ['apps/*/'],
+      rootDir: [
+        'apps/*/', 'packages/ui/*',
+      ],
     },
   },
 }
