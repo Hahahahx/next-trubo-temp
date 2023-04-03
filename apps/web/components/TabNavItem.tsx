@@ -1,15 +1,15 @@
-import clsx from 'clsx';
-import Link from 'next/link';
+import clsx from 'clsx'
+import Link from 'next/link'
 
-export const TabNavItem = ({
+export function TabNavItem({
   children,
   href,
   isActive,
 }: {
-  children: React.ReactNode;
-  href: string;
-  isActive?: boolean;
-}) => {
+  children: React.ReactNode
+  href: string
+  isActive?: boolean
+}) {
   return (
     <Link
       href={href}
@@ -21,5 +21,5 @@ export const TabNavItem = ({
     >
       {children}
     </Link>
-  );
-};
+  )
+}

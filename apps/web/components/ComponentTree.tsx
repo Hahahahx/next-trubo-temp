@@ -1,19 +1,19 @@
-import { Boundary } from 'components/Boundary';
-import CountUp from 'components/CountUp';
-import clsx from 'clsx';
+import { Boundary } from 'components/Boundary'
+import CountUp from 'components/CountUp'
+import clsx from 'clsx'
 
-type Item = {
-  name: string;
-  type: 'server' | 'client';
-  size: number;
-  children?: Item[];
-};
+interface Item {
+  name: string
+  type: 'server' | 'client'
+  size: number
+  children?: Item[]
+}
 
-const List = ({ items, depth }: { items: Item[]; depth: number }) => {
+function List({ items, depth }: { items: Item[]; depth: number }) {
   return (
     <div>
       {items.map((item, i) => {
-        const isLast = i === items.length - 1;
+        const isLast = i === items.length - 1
 
         return (
           <div
@@ -22,19 +22,19 @@ const List = ({ items, depth }: { items: Item[]; depth: number }) => {
               depth === 0
                 ? undefined // Ignore first level
                 : clsx(
-                    'relative ml-5 pt-2',
-                    // Use the border of pseudo elements to visualize hierarchy
-                    // │
-                    'before:absolute before:-left-2.5 before:top-0 before:border-l-2 before:border-zinc-800',
-                    // ──
-                    'after:absolute after:top-[17px] after:-left-2.5 after:h-3 after:w-2.5 after:border-t-2 after:border-zinc-800',
-                    {
-                      // ├─
-                      'before:h-full': !isLast,
-                      // └─
-                      'before:h-[17px]': isLast,
-                    },
-                  )
+                  'relative ml-5 pt-2',
+                  // Use the border of pseudo elements to visualize hierarchy
+                  // │
+                  'before:absolute before:-left-2.5 before:top-0 before:border-l-2 before:border-zinc-800',
+                  // ──
+                  'after:absolute after:top-[17px] after:-left-2.5 after:h-3 after:w-2.5 after:border-t-2 after:border-zinc-800',
+                  {
+                    // ├─
+                    'before:h-full': !isLast,
+                    // └─
+                    'before:h-[17px]': isLast,
+                  },
+                )
             }
           >
             <div className="flex space-x-1">
@@ -62,46 +62,51 @@ const List = ({ items, depth }: { items: Item[]; depth: number }) => {
                 )}
               >
                 <span className="tabular-nums">
-                  {item.type === 'client' ? (
-                    item.size / 1000
-                  ) : (
+                  {item.type === 'client'
+                    ? (
+                        item.size / 1000
+                      )
+                    : (
                     <CountUp start={item.size / 1000} end={0} />
-                  )}
+                      )}
                 </span>{' '}
                 KB
               </div>
             </div>
 
-            {item.children ? (
+            {item.children
+              ? (
               <List items={item.children} depth={depth + 1} />
-            ) : null}
+                )
+              : null}
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
 // Calculate the total bundle size of a specific component type (client or
 // server) in a tree
-const sum = (items: Item[], componentType: Item['type']): number =>
-  items.reduce(
+function sum(items: Item[], componentType: Item['type']): number {
+  return items.reduce(
     (total, item) =>
       // running total
-      total +
+      total
       // add the current component size if it's type is componentType
-      ((item.type === componentType ? item.size : 0) || 0) +
+      + ((item.type === componentType ? item.size : 0) || 0)
       // add the total size of children components recursively
-      (item?.children ? sum(item.children, componentType) : 0),
+      + (item?.children ? sum(item.children, componentType) : 0),
     0,
-  );
+  )
+}
 
-export const ComponentTree = ({ items }: { items: Item[] }) => {
-  const clientTotal = sum(items, 'client');
-  const serverTotal = sum(items, 'server');
+export function ComponentTree({ items }: { items: Item[] }) {
+  const clientTotal = sum(items, 'client')
+  const serverTotal = sum(items, 'server')
   const clientDeltaAsPercent = Math.round(
     (clientTotal / (clientTotal + serverTotal)) * 100,
-  );
+  )
 
   return (
     <Boundary animateRerendering={false} labels={['Component Tree']}>
@@ -158,5 +163,5 @@ export const ComponentTree = ({ items }: { items: Item[] }) => {
         </div>
       </div>
     </Boundary>
-  );
-};
+  )
+}

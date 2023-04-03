@@ -1,15 +1,15 @@
-import clsx from 'clsx';
-import React from 'react';
+import clsx from 'clsx'
+import React from 'react'
 
-const Label = ({
+function Label({
   children,
   animateRerendering,
   color,
 }: {
-  children: React.ReactNode;
-  animateRerendering?: boolean;
-  color?: 'default' | 'pink' | 'blue' | 'violet' | 'cyan' | 'orange';
-}) => {
+  children: React.ReactNode
+  animateRerendering?: boolean
+  color?: 'default' | 'pink' | 'blue' | 'violet' | 'cyan' | 'orange'
+}) {
   return (
     <div
       className={clsx('rounded-full px-1.5 shadow-[0_0_1px_4px_black]', {
@@ -24,21 +24,21 @@ const Label = ({
     >
       {children}
     </div>
-  );
-};
-export const Boundary = ({
+  )
+}
+export function Boundary({
   children,
   labels = ['children'],
   size = 'default',
   color = 'default',
   animateRerendering = true,
 }: {
-  children: React.ReactNode;
-  labels?: string[];
-  size?: 'small' | 'default';
-  color?: 'default' | 'pink' | 'blue' | 'violet' | 'cyan' | 'orange';
-  animateRerendering?: boolean;
-}) => {
+  children: React.ReactNode
+  labels?: string[]
+  size?: 'small' | 'default'
+  color?: 'default' | 'pink' | 'blue' | 'violet' | 'cyan' | 'orange'
+  animateRerendering?: boolean
+}) {
   return (
     <div
       className={clsx('relative rounded-xl border border-dashed', {
@@ -72,11 +72,11 @@ export const Boundary = ({
             >
               {label}
             </Label>
-          );
+          )
         })}
       </div>
 
       {children}
     </div>
-  );
-};
+  )
+}

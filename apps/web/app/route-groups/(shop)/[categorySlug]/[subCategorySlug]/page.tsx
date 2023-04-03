@@ -1,12 +1,14 @@
-import { use } from 'react';
-import { fetchSubCategory, PageProps } from '@/lib/getCategories';
-import { SkeletonCard } from 'components/SkeletonCard';
+import { use } from 'react'
+import { SkeletonCard } from 'components/SkeletonCard'
+import type { PageProps } from '@/lib/getCategories'
+import { fetchSubCategory } from '@/lib/getCategories'
 
 export default function Page({ params }: PageProps) {
   const category = use(
     fetchSubCategory(params.categorySlug, params.subCategorySlug),
-  );
-  if (!category) return null;
+  )
+  if (!category)
+    return null
 
   return (
     <div className="space-y-4">
@@ -18,5 +20,5 @@ export default function Page({ params }: PageProps) {
         ))}
       </div>
     </div>
-  );
+  )
 }

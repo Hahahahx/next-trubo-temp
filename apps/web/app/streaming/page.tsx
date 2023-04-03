@@ -1,8 +1,8 @@
-import { SkeletonCard } from 'components/SkeletonCard';
-import { Suspense } from 'react';
-import Description from './description';
-import ProductHeader from './product-header';
-import BuyNow from './buy-now';
+import { SkeletonCard } from 'components/SkeletonCard'
+import { Suspense } from 'react'
+import Description from './description'
+import ProductHeader from './product-header'
+import BuyNow from './buy-now'
 
 export default function Posts() {
   return (
@@ -45,5 +45,5 @@ export default function Posts() {
         </div>
       </div>
     </section>
-  );
+  )
 }

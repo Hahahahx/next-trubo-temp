@@ -1,11 +1,13 @@
-import { use } from 'react';
-import { fetchCategoryBySlug, PageProps } from '@/lib/getCategories';
-import ClickCounter from 'components/ClickCounter';
-import SubCategoryNav from './SubCategoryNav';
+import { use } from 'react'
+import ClickCounter from 'components/ClickCounter'
+import SubCategoryNav from './SubCategoryNav'
+import type { PageProps } from '@/lib/getCategories'
+import { fetchCategoryBySlug } from '@/lib/getCategories'
 
 export default function Layout({ children, params }: PageProps) {
-  const category = use(fetchCategoryBySlug(params.categorySlug));
-  if (!category) return null;
+  const category = use(fetchCategoryBySlug(params.categorySlug))
+  if (!category)
+    return null
 
   return (
     <div className="space-y-9">
@@ -15,5 +17,5 @@ export default function Layout({ children, params }: PageProps) {
       </div>
       <div>{children}</div>
     </div>
-  );
+  )
 }

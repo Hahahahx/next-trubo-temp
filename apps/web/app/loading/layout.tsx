@@ -1,11 +1,12 @@
-import React, { use } from 'react';
-import { fetchCategories } from '@/lib/getCategories';
-import ClickCounter from 'components/ClickCounter';
-import CategoryNav from './CategoryNav';
+import React, { use } from 'react'
+import ClickCounter from 'components/ClickCounter'
+import CategoryNav from './CategoryNav'
+import { fetchCategories } from '@/lib/getCategories'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const categories = use(fetchCategories());
-  if (!categories) return null;
+  const categories = use(fetchCategories())
+  if (!categories)
+    return null
 
   return (
     <div className="space-y-9">
@@ -16,5 +17,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <div>{children}</div>
     </div>
-  );
+  )
 }

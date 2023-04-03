@@ -1,13 +1,13 @@
-import './styles.css';
+import './styles.css'
 
-const SkeletonCard = () => (
-  <div className="skeleton">
+function SkeletonCard() {
+  return <div className="skeleton">
     <div className="skeleton-img" />
     <div className="skeleton-btn" />
     <div className="skeleton-line-one" />
     <div className="skeleton-line-two" />
   </div>
-);
+}
 
 export default function Page() {
   return (
@@ -21,5 +21,5 @@ export default function Page() {
         <SkeletonCard />
       </div>
     </div>
-  );
+  )
 }

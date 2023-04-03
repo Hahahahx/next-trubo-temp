@@ -2,10 +2,9 @@ import React, { use } from 'react'
 import { Boundary } from 'components/Boundary'
 import ClickCounter from 'components/ClickCounter'
 import HooksClient from 'components/HooksClient'
+import CategoryNav from './CategoryNav'
 // These are not yet implemented in Next.js v13 w/Turbopack
 // import HooksServer from '@/ui/HooksServer';
-import React from 'react'
-import CategoryNav from './CategoryNav'
 import { fetchCategories } from '@/lib/getCategories'
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const HeadContainer = styled.header`
   position: relative;
@@ -14,14 +14,14 @@ const HeadContainer = styled.header`
   color: rgb(244 244 245);
   grid-column-start: 2;
   grid-column-end: 4;
-`;
+`
 
 const Title = styled.span`
   margin: 0 8px;
-`;
+`
 
-const NextJsLogo = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
+function NextJsLogo(props: React.SVGProps<SVGSVGElement>) {
+  return <svg
     version="1.1"
     viewBox="0 0 148 90"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -32,13 +32,13 @@ const NextJsLogo = (props: React.SVGProps<SVGSVGElement>) => (
       fillRule="nonzero"
     ></path>
   </svg>
-);
+}
 
 export default function Header() {
   return (
     <HeadContainer>
-      <NextJsLogo height={40} fill={`rgb(244 244 245)`} />
+      <NextJsLogo height={40} fill={'rgb(244 244 245)'} />
       <Title>The React Framework</Title>
     </HeadContainer>
-  );
+  )
 }

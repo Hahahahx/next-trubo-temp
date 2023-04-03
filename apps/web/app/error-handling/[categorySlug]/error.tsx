@@ -1,8 +1,8 @@
 'use client'
 
+import React from 'react'
 import { Boundary } from 'components/Boundary'
 import Button from 'components/Button'
-import React from 'react'
 
 export default function Error({ error, reset }: any) {
   React.useEffect(() => {

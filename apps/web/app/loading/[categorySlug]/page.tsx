@@ -1,26 +1,26 @@
-// @ts-ignore
-import { use } from 'react';
-import {
-  fetchCategoryBySlug,
+// @ts-expect-error
+import { use } from 'react'
+import { SkeletonCard } from 'components/SkeletonCard'
+import { fetchCategoryBySlug } from '@/lib/getCategories'
+import type {
+  Category,
   PageProps,
-  type Category,
-} from '@/lib/getCategories';
-import { SkeletonCard } from 'components/SkeletonCard';
+} from '@/lib/getCategories'
 
-const fetchCategory = async (
-  categorySlug: string | undefined,
-): Promise<Category | undefined> => {
+async function fetchCategory(categorySlug: string | undefined): Promise<Category | undefined> {
   // artificial delay
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise(resolve => setTimeout(resolve, 3000))
 
-  if (!categorySlug) return;
+  if (!categorySlug)
+    return
 
-  return await fetchCategoryBySlug(categorySlug);
-};
+  return await fetchCategoryBySlug(categorySlug)
+}
 
 export default function Page({ params }: PageProps) {
-  const category = use(fetchCategory(params.categorySlug));
-  if (!category) return null;
+  const category = use(fetchCategory(params.categorySlug))
+  if (!category)
+    return null
 
   return (
     <div className="space-y-4">
@@ -32,5 +32,5 @@ export default function Page({ params }: PageProps) {
         ))}
       </div>
     </div>
-  );
+  )
 }

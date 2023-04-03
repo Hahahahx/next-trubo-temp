@@ -1,6 +1,6 @@
-import { Boundary } from 'components/Boundary'
-import { CounterProvider } from 'app/context/CounterContext'
 import React, { use } from 'react'
+import { CounterProvider } from 'app/context/CounterContext'
+import { Boundary } from 'components/Boundary'
 import CategoryNav from './CategoryNav'
 import ClickCounter from './ClickCounter'
 import { fetchCategories } from '@/lib/getCategories'

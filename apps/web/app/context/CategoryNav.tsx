@@ -1,7 +1,7 @@
 'use client'
 
-import { TabNavItem } from 'components/TabNavItem'
 import { useSelectedLayoutSegments } from 'next/navigation'
+import { TabNavItem } from 'components/TabNavItem'
 import { type Category } from '@/lib/getCategories'
 
 function CategoryNav({ categories }: { categories: Category[] }) {
