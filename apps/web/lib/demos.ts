@@ -1,12 +1,12 @@
-type Item = {
-  name: string;
+interface Item {
+  name: string
   items: {
-    name: string;
-    slug: string;
-    description?: string;
-    isDisabled?: boolean;
-  }[];
-};
+    name: string
+    slug: string
+    description?: string
+    isDisabled?: boolean
+  }[]
+}
 
 export const demos: Item[] = [
   {
@@ -80,4 +80,4 @@ export const demos: Item[] = [
       },
     ],
   },
-];
+]
