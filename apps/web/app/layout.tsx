@@ -1,4 +1,4 @@
-'use client'
+import '../styles/uno.css'
 
 import CacheProvider from '@/components/CacheProvider'
 
@@ -8,7 +8,7 @@ export default function RootLayout({ children }: {
   return (
     <html lang='en'>
       <head />
-      <body>
+      <body className=' bg-slate-4 '>
         <CacheProvider>
           {children}
         </CacheProvider>

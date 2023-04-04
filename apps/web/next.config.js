@@ -1,3 +1,5 @@
+const UnoCSS = require('@unocss/webpack').default
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: [
@@ -11,6 +13,13 @@ const nextConfig = {
   experimental: {
     appDir: true,
     mdxRs: true,
+  },
+  webpack: (config) => {
+    config.cache = false
+    config.plugins.push(
+      UnoCSS(), // <--
+    )
+    return config
   },
 }
 
