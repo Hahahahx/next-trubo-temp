@@ -1,6 +1,4 @@
-import '../styles/uno.css'
-
-import CacheProvider from '@/components/CacheProvider'
+import '../styles/globals.css'
 
 export default function RootLayout({ children }: {
   children: React.ReactNode
@@ -8,10 +6,8 @@ export default function RootLayout({ children }: {
   return (
     <html lang='en'>
       <head />
-      <body className=' bg-slate-4 '>
-        <CacheProvider>
-          {children}
-        </CacheProvider>
+      <body className='bg-slate-950'>
+        {children}
       </body>
     </html>
   )

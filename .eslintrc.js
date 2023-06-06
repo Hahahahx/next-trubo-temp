@@ -5,7 +5,7 @@ module.exports = {
   settings: {
     next: {
       rootDir: [
-        'apps/*/', 'packages/ui/*',
+        'apps/**/*', 'packages/**/*',
       ],
     },
   },

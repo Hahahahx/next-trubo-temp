@@ -1,13 +1,14 @@
 import Link from 'next/link'
-import Button from 'ui/Button'
 import HelloWorld from './hello.mdx'
 import { demos } from '@/lib/demos'
 
 export default function Page() {
   return (
     <div className="space-y-6">
-      <HelloWorld/>
-      <Button>test</Button>
+      <div className=''>
+        <HelloWorld/>
+      </div>
+
       <div className="space-y-8 text-white">
         {demos
           .filter((section) =>
@@ -34,9 +35,9 @@ export default function Page() {
 
                           {item.description
                             ? (
-                            <div className="line-clamp-3 text-sm text-zinc-400">
-                              {item.description}
-                            </div>
+                              <div className="line-clamp-3 text-sm text-zinc-400">
+                                {item.description}
+                              </div>
                               )
                             : null}
                         </Link>
